@@ -1,4 +1,4 @@
-#include "exam_rank02.h"
+#include <unistd.h>
 #define INT_MIN -2147483648 /* 定义一个符号常量 */
 
 void	ft_putnbr(int nb)

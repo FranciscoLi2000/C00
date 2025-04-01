@@ -1,13 +1,13 @@
 #include <unistd.h>
 
-void ft_print_reverse_alphabet(void)
+void	ft_print_reverse_alphabet(void)
 {
-    int c;
+	int	c;
 
-    c = 122;
-    while (c >= 97)
-    {
-        ft_putchar(c);
-        c--;
-    }
+	c = 122;
+	while (c >= 97)
+	{
+		ft_putchar(c);
+		c--;
+	}
 }

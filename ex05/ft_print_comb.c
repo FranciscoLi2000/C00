@@ -2,7 +2,7 @@
 
 void	ft_print_comb(void)
 {
-	int arr[3];
+	int	arr[3];
 
 	arr[0] = 48;
 	while (arr[0] <= 55)

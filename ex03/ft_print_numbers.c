@@ -1,13 +1,13 @@
 #include <unistd.h>
 
-void ft_print_numbers(void)
+void	ft_print_numbers(void)
 {
-    int c;
+	int	c;
 
-    c = 48;
-    while (c <= 57)
-    {
-        ft_putchar(c);
-        c++;
-    }
+	c = 48;
+	while (c <= 57)
+	{
+		ft_putchar(c);
+		c++;
+	}
 }

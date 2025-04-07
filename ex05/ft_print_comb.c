@@ -1,27 +1,38 @@
 #include <unistd.h>
 
+void	ft_print_comb(void);
+
+int	main(void)
+{
+	ft_print_comb();
+	write(1, "\n", 1);
+	return (0);
+}
+
 void	ft_print_comb(void)
 {
-	int	arr[3];
+	int	x;
+	int	y;
+	int	z;
 
-	arr[0] = 48;
-	while (arr[0] <= 55)
+	x = 48;
+	while (x <= 55)
 	{
-		arr[1] = arr[0] + 1;
-		while (arr[1] <= 56)
+		y = x + 1;
+		while (y <= 56)
 		{
-			arr[2] = arr[1] + 1;
-			while (arr[2] <= 57)
+			z = y + 1;
+			while (z <= 57)
 			{
-				write(1, &"0123456789"[arr[0]], 1);
-				write(1, &"0123456789"[arr[1]], 1);
-				write(1, &"0123456789"[arr[2]], 1);
-				if (!(arr[0] == 7 && arr[1] == 8 && arr[2] == 9))
+				write(1, &x, 1);
+				write(1, &y, 1);
+				write(1, &z, 1);
+				if (!(x == 55 && y == 56 && z == 57))
 					write(1, ", ", 2);
-				arr[2]++;
+				z++;
 			}
-			arr[1]++;
+			y++;
 		}
-		arr[0]++;
+		x++;
 	}
 }

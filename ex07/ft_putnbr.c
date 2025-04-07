@@ -1,6 +1,17 @@
 #include <unistd.h>
 #define INT_MIN -2147483648 /* 定义一个符号常量 */
 
+void	ft_putnbr(int nb);
+
+int	main(void)
+{
+	int	x;
+
+	x = 145467;
+	ft_putnbr(x);
+	return (0);
+}
+
 void	ft_putnbr(int nb)
 {
 	int	num;

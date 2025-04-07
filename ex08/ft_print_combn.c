@@ -1,38 +1,63 @@
 #include <unistd.h>
+#include <stdio.h>
+
+void	ft_print_combn(int n);
+
+int	main(void)
+{
+	int	n;
+
+	scanf("%d", &n);
+	ft_print_combn(n);
+	return (0);
+}
+
+static void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+static int	ft_end(char *tab, int size)
+{
+	int	count;
+	int	index;
+
+	count = 0;
+	index = 0;
+	while (index < size)
+	{
+		if (tab[index] == '9')
+			count++;
+		index++;
+	}
+	if (count == size)
+		return (1);
+	else
+		return(0);
+}
 
 void	ft_print_combn(int n)
 {
-	char	arr[9];
-	char	c;
-	int		i;
-	int		j;
+	char	tab[n];
+	int		index;
 
-	i = -1;
-	while (++i < n)
-		arr[i] = i;
-	i = -1;
-	while (++i < n)
+	while (index < n)
+		tab[index++] = '0';
+	while (ft_end(tab, n) != 1)
 	{
-		c = arr[i] + '0';
-		write(1, &c, 1);
-	}
-	while (1)
-	{
-		j = n - 1;
-		while (j >= 0 && arr[j] == 10 - n + j)
-			j--;
-		if (j < 0)
-			return ;
-		arr[j]++;
-		i = j;
-		while (++i < n)
-			arr[i] = arr[i - 1] + 1;
-		write(1, ", ", 2);
-		i = -1;
-		while (++i < n)
+		if (tab[n - 1] == '9')
 		{
-			c = arr[i] + '0';
-			write(1, &c, 1);
+			for (index = n - 1; tab[index] == '9'; index--);
+			tab[index]++;
+			index++;
+			while (index < n)
+				tab[index++] = '0';
 		}
+		else
+			tab[n - 1]++;
+		for (index = 0; index < n; index++)
+			ft_putchar(tab[index]);
+		ft_putchar(',');
+		ft_putchar(' ');
 	}
 }

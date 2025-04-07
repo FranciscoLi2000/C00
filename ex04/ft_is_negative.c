@@ -1,5 +1,16 @@
 #include <unistd.h>
 
+void	ft_is_negative(int n);
+
+int	main(void)
+{
+	int	x;
+
+	x = 24;
+	ft_is_negative(x);
+	return (0);
+}
+
 void	ft_is_negative(int n)
 {
 	if (n >= 0)
